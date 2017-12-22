@@ -3,6 +3,9 @@ import networkx as nx
 import numpy as np
     
 def conferenceSubgraph(graph, conferences, conferenceId):
+    if conferenceId not in conferences:
+        print("Error, conference not found.")
+        return
     ret= graph.subgraph(conferences[conferenceId])
     print("\nThis is the subgraph induced by the set of autor who published in the input conference, We took %d as conference" %(conferenceId))
     plt.clf()
@@ -72,6 +75,9 @@ def betweenness(graph):
     plt.show()
 
 def ego_graph(graph, author, hops):
+    if author not in graph.nodes():
+        print("The author is not in the graph")
+        return
     print("The graph above is the ego graph of author with hop distance at most %d from author %d" %(hops, author))
     ego= nx.ego_graph(graph, author, radius=hops, center=True, undirected=False, distance=None)
     plt.clf()
