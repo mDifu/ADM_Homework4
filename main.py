@@ -3,9 +3,6 @@ import createGraph as cg
 import dijkstra as dij
 import networkx as nx
 
-
-path="C:\\Users\\matti\\Desktop\\reduced_dblp.json"
-
 if __name__ == "__main__":
     print("REMEMBER TO CHANGE THE PATH IF THE FILE IS NOT IN THE SAME FOLDER OF THE CODE!")
     path="full_dblp.json"
